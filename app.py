@@ -54,6 +54,11 @@ async def contact_handler(message: types.Message):
     phone = contact.phone_number
     telegram_id = contact.user_id
 
+    # Foydalanuvchi o'z raqamini yuborganini tekshirish
+    if contact.user_id != message.from_user.id:
+        await message.answer("❌ Faqat o'zingizning raqamingizni yuborishingiz mumkin.")
+        return
+
     data = {
         "name": name,
         "telegramId": str(telegram_id),
@@ -76,6 +81,7 @@ async def contact_handler(message: types.Message):
     except Exception as e:
         logging.error(f"API xatosi: {e}")
         await message.answer("⚠️ Server ishlamayapti yoki ulanib bo‘lmadi.")
+
 
 @dp.message(Command("login"))
 async def login_handler(message: types.Message):
