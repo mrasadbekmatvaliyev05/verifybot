@@ -9,7 +9,7 @@ from aiogram.enums import ContentType
 from aiogram.fsm.storage.memory import MemoryStorage
 from aiogram.filters import Command
 
-# Load .env file
+
 load_dotenv()
 
 BOT_TOKEN = os.getenv("BOT_TOKEN")
@@ -54,7 +54,7 @@ async def contact_handler(message: types.Message):
     phone = contact.phone_number
     telegram_id = contact.user_id
 
-    # Foydalanuvchi o'z raqamini yuborganini tekshirish
+
     if contact.user_id != message.from_user.id:
         await message.answer("❌ Faqat o'zingizning raqamingizni yuborishingiz mumkin.")
         return
