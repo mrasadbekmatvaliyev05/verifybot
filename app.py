@@ -60,9 +60,9 @@ async def contact_handler(message: types.Message):
         return
 
     data = {
-        "name": name,
-        "telegramId": str(telegram_id),
-        "phoneNumber": phone
+        "name": first_name,
+        "telegram_id": str(telegram_id),
+        "phone": phone
     }
 
     headers = {
