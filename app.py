@@ -59,9 +59,15 @@ async def contact_handler(message: types.Message):
         await message.answer("❌ Faqat o'zingizning raqamingizni yuborishingiz mumkin.")
         return
 
+    # data = {
+    #     "first_name": name,
+    #     "telegram_id": str(telegram_id),
+    #     "phone": phone
+    # }
+
     data = {
+        "telegram_id": telegram_id,
         "first_name": name,
-        "telegram_id": str(telegram_id),
         "phone": phone
     }
 
