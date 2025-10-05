@@ -12,7 +12,9 @@ from aiogram.filters import Command
 
 load_dotenv()
 
-
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+API_URL_ADD = os.getenv("API_URL_ADD")
+TELEGRAM_SECRET_TOKEN = os.getenv("TELEGRAM_SECRET_TOKEN")
 
 logging.basicConfig(level=logging.INFO)
 
